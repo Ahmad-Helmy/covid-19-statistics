@@ -1,0 +1,46 @@
+<div class="container-fluid ">
+    <div class="row d-flex justify-content-center mt-3">
+        <button (click)="testStart()" class="btn btn-primary">start</button>
+        <button (click)="testPause()" class="btn btn-primary">pause</button>
+        <button (click)="testStop()" class="btn btn-primary">stop</button>
+    </div>
+    <div class="container info">
+        <div *ngIf="currentInfo" class="row">
+            <div class="col-1"></div>
+            <p class="col-2"><b>name:</b> {{currentInfo.name}}</p>
+            <p class="col-2"><b># of casses:</b> {{currentInfo.cases}}</p>
+            <p class="col-2"><b># of deaths:</b> {{currentInfo.deaths}}</p>
+            <p class="col-2"><b># of recoverd:</b> {{currentInfo.recoverd}}</p>
+            <p class="col-2"><b>date:</b> {{currentInfo.date.day}}/{{currentInfo.date.month}}/{{currentInfo.date.year}}
+            </p>
+            <div class="col-1"></div>
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="space">
+        </div>
+        <div class="bottom">
+            <p *ngFor='let g of hgrid' [ngStyle]="{'left':g*10-0.5+'%'}" class="position-absolute m-0">{{g}}</p>
+        </div>
+    </div>
+    <div class="row ">
+        <div [ngStyle]="{'height':realTime.length*60+'px'}" class="left">
+            <p *ngFor='let c of realTime;let i=index' [ngStyle]="{'top':(i/realTime.length)*100+'%'}"
+                class="position-absolute m-0">
+                {{c.name}}</p>
+        </div>
+        <div [ngStyle]="{'height':realTime.length*60+'px'}" class="chart">
+            <div *ngFor='let g of hgrid' [ngStyle]="{'left':g*10+'%'}" class="horizontal-line ">
+            </div>
+            <div *ngFor='let c of realTime;let i=index' [ngStyle]="{'top':(i/realTime.length)*100+'%'}"
+                class="vertical-line ">
+            </div>
+            <div class="bar">
+                <app-bar *ngFor="let c of realTime" (onHover)='hover($event)' (onLeave)='leave($event)' [country]='c'>
+                </app-bar>
+            </div>
+        </div>
+    </div>
+
+
+</div>

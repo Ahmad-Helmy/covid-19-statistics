@@ -1,0 +1,50 @@
+.chart {
+  min-height: 600px;
+  width: 1200px;
+  border: 2px blue solid;
+  border-right: none;
+  position: relative;
+}
+.left {
+  min-height: 600px;
+  width: 150px;
+  /* border: 2px red solid; */
+  position: relative;
+}
+.bottom {
+  width: 1200px;
+  height: 20px;
+  /* border: 2px red solid; */
+  position: relative;
+}
+.space {
+  height: 20px;
+  width: 150px;
+}
+.horizontal-line {
+  background-color: blue;
+  opacity: 0.5;
+  width: 1px;
+  height: 100%;
+  position: absolute;
+  top: 0;
+}
+.vertical-line {
+  background-color: blue;
+  opacity: 0.5;
+  width: 100%;
+  height: 1px;
+  position: absolute;
+  left: 0;
+}
+.info {
+  height: 50px;
+}
+
+.bar {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}

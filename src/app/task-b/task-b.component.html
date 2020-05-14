@@ -1,0 +1,26 @@
+<div class="d-flex justify-content-center mt-3">
+    <button (click)="testStart()" class="btn btn-primary">start</button>
+    <button (click)="testPause()" class="btn btn-primary">pause</button>
+    <button (click)="testStop()" class="btn btn-primary">stop</button>
+</div>
+<div class="container info">
+    <div *ngIf="currentInfo" class="row">
+        <div class="col-1"></div>
+        <p class="col-2"><b>name:</b> {{currentInfo.name}}</p>
+        <p class="col-2"><b># of casses:</b> {{currentInfo.cases}}</p>
+        <p class="col-2"><b># of deaths:</b> {{currentInfo.deaths}}</p>
+        <p class="col-2"><b># of recoverd:</b> {{currentInfo.recoverd}}</p>
+        <p class="col-2"><b>date:</b> {{currentInfo.date.day}}/{{currentInfo.date.month}}/{{currentInfo.date.year}}
+        </p>
+        <div class="col-1"></div>
+    </div>
+</div>
+<div class="d-flex justify-content-center">
+    <div class="position-relative">
+        <img width="950"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/5d/World_map_%28Miller_cylindrical_projection%2C_blank%29.svg"
+            alt="">
+        <app-boundry-bubble (onHover)='hover($event)' (onLeave)='leave($event)' *ngFor="let c of realTime"
+            [country]='c'> </app-boundry-bubble>
+    </div>
+</div>
