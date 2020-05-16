@@ -8,7 +8,7 @@ export class TaskAService {
   constructor(private http: HttpClient) {}
 
   getResultLotLan() {
-    return this.http.get("assets/final response lat lon.json");
+    return this.http.get("assets/final response code (2).json");
   }
 
   getResult() {

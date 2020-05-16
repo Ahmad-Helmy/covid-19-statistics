@@ -6,4 +6,5 @@ export interface ICountry {
   date: { day: number; month: number; year: number };
   Lat?: number;
   Lon?: number;
+  code?: string;
 }

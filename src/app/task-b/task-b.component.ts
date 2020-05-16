@@ -11,6 +11,7 @@ export class TaskBComponent implements OnInit {
   realTime: Array<ICountry> = [];
   countries: Array<ICountry> = [];
   i = 0;
+  date;
   index = [];
   start = false;
   currentInfo: ICountry;
@@ -35,6 +36,7 @@ export class TaskBComponent implements OnInit {
     this.start = false;
     this.realTime = [];
     this.i = 0;
+    this.date = "";
   }
   hover(e) {
     this.currentInfo = e;
@@ -53,6 +55,7 @@ export class TaskBComponent implements OnInit {
         this.index[this.i],
         this.index[this.i + 1]
       );
+      // this.date = this.realTime[0].date;
       this.i++;
       this.play();
     }, 500);

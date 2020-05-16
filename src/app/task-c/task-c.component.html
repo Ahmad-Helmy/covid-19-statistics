@@ -5,6 +5,9 @@
         <button (click)="testStop()" class="btn btn-primary">stop</button>
     </div>
     <div class="container info">
+        <div class="font-weight-bolder row justify-content-center">
+            {{date.day}}/{{date.month}}/{{date.year}}
+        </div>
         <div *ngIf="currentInfo" class="row">
             <div class="col-1"></div>
             <p class="col-2"><b>name:</b> {{currentInfo.name}}</p>
@@ -16,14 +19,14 @@
             <div class="col-1"></div>
         </div>
     </div>
-    <div class="row mt-5">
+    <div class="row">
         <div class="space">
         </div>
-        <div class="bottom">
+        <div class="top">
             <p *ngFor='let g of hgrid' [ngStyle]="{'left':g*10-0.5+'%'}" class="position-absolute m-0">{{g}}</p>
         </div>
     </div>
-    <div class="row ">
+    <div class="row mb-5 chart-container">
         <div [ngStyle]="{'height':realTime.length*60+'px'}" class="left">
             <p *ngFor='let c of realTime;let i=index' [ngStyle]="{'top':(i/realTime.length)*100+'%'}"
                 class="position-absolute m-0">
@@ -31,6 +34,10 @@
         </div>
         <div [ngStyle]="{'height':realTime.length*60+'px'}" class="chart">
             <div *ngFor='let g of hgrid' [ngStyle]="{'left':g*10+'%'}" class="horizontal-line ">
+            </div>
+            <div *ngIf="realTime.length==0">
+                <div *ngFor='let v of vgrid' [ngStyle]="{'top':v*10+'%'}" class="vertical-line ">
+                </div>
             </div>
             <div *ngFor='let c of realTime;let i=index' [ngStyle]="{'top':(i/realTime.length)*100+'%'}"
                 class="vertical-line ">
@@ -41,6 +48,4 @@
             </div>
         </div>
     </div>
-
-
 </div>

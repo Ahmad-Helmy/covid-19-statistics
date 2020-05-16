@@ -1,5 +1,8 @@
 <div class="container-fluid mt-5 d-flex flex-column align-items-center">
     <div class="container info">
+        <div class="font-weight-bolder row justify-content-center">
+            {{date.day}}/{{date.month}}/{{date.year}}
+        </div>
         <div *ngIf="currentInfo" class="row">
             <div class="col-1"></div>
             <p class="col-2"><b>name:</b> {{currentInfo.name}}</p>
@@ -16,7 +19,7 @@
             <p *ngFor='let g of vgrid' [ngStyle]="{'bottom':g*10-2.5+'%'}" class="position-absolute m-0">{{g}}</p>
         </div>
         <div class="chart">
-            <div *ngFor='let g of hgrid' [ngStyle]="{'left':g*10+'%'}" class="horizontal-line ">
+            <div *ngFor='let g of hgrid' [ngStyle]="{'left':g.index*10+'%'}" class="horizontal-line ">
             </div>
             <div *ngFor='let g of vgrid' [ngStyle]="{'top':g*10+'%'}" class="vertical-line ">
             </div>
@@ -28,7 +31,9 @@
         <div class="space">
         </div>
         <div class="bottom">
-            <p *ngFor='let g of hgrid' [ngStyle]="{'left':g*10-0.5+'%'}" class="position-absolute m-0">{{g}}</p>
+            <p *ngFor='let g of hgrid' [ngStyle]="{'left':g.index*10-0.5+'%'}" class="position-absolute m-0">
+                {{g.value|number:'1.0-0'}}
+            </p>
         </div>
     </div>
     <div class="row mt-3">

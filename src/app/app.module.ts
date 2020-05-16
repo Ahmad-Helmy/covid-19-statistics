@@ -11,9 +11,10 @@ import { BarComponent } from './task-c/bar/bar.component';
 import { TaskBComponent } from './task-b/task-b.component';
 import { BoundryBubbleComponent } from './task-b/boundry-bubble/boundry-bubble.component';
 import { HeaderComponent } from './header/header.component';
+import { MapComponent } from './task-b/map/map.component';
 
 @NgModule({
-  declarations: [AppComponent, BubbleComponent, TaskAComponent, TaskCComponent, BarComponent, TaskBComponent, BoundryBubbleComponent, HeaderComponent],
+  declarations: [AppComponent, BubbleComponent, TaskAComponent, TaskCComponent, BarComponent, TaskBComponent, BoundryBubbleComponent, HeaderComponent, MapComponent],
   imports: [BrowserModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent]

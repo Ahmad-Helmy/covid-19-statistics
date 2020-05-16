@@ -1,20 +1,22 @@
 .chart {
-  min-height: 600px;
-  width: 1200px;
+  min-height: 500px;
+  width: 1000px;
   border: 2px blue solid;
   border-right: none;
   position: relative;
 }
+.chart-container {
+  overflow-y: scroll;
+  max-height: 500px;
+}
 .left {
-  min-height: 600px;
+  min-height: 500px;
   width: 150px;
-  /* border: 2px red solid; */
   position: relative;
 }
-.bottom {
-  width: 1200px;
+.top {
+  width: 1000px;
   height: 20px;
-  /* border: 2px red solid; */
   position: relative;
 }
 .space {

@@ -12,9 +12,7 @@ export class TaskCComponent implements OnInit {
   countries: Array<ICountry> = [];
   i = 0;
   index = [];
-  title = "covid19";
-  bottom = 50;
-  left = 50;
+  date;
   vgrid = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
   hgrid = [
     0,
@@ -63,6 +61,7 @@ export class TaskCComponent implements OnInit {
     this.start = false;
     this.realTime = [];
     this.i = 0;
+    this.date = "";
   }
   hover(e) {
     this.currentInfo = e;
@@ -76,14 +75,14 @@ export class TaskCComponent implements OnInit {
   play() {
     setTimeout(() => {
       console.log(this.i);
-      if (this.i + 4 == this.index.length || !this.start) return;
+      if (this.i + 1 == this.index.length || !this.start) return;
 
       this.realTime = this.countries
         .slice(this.index[this.i], this.index[this.i + 1])
         .sort((a, b) => {
           return b.cases - a.cases;
         });
-
+      this.date = this.realTime[0].date;
       this.i++;
       this.play();
     }, 500);

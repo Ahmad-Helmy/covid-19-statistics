@@ -17,7 +17,7 @@ export class BarComponent implements OnInit {
   constructor() {}
 
   ngOnInit() {
-    this.width = this.country.cases / 800;
+    this.width = this.country.cases / 1100;
     if (this.width < 200) {
       this.bg = "rgba(72, 255, 0)";
     } else if (this.width >= 200 && this.width < 400) {
